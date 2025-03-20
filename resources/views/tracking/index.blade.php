@@ -20,7 +20,7 @@
     <nav class="bg-white shadow-md py-4" x-data="{ open: false }">
         <div class="container mx-auto flex justify-between items-center px-6">
             <!-- Logo -->
-            <a href="{{ route('home') }}" class="flex items-center space-x-3">
+            <a href="https://balipuremanufacturer.id" class="flex items-center space-x-3">
                 <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo" class="h-10 w-auto">
                 <span class="text-xl font-bold">Bali Pure Manufacturer</span>
             </a>
@@ -87,10 +87,11 @@
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6281234567890" target="_blank"
-        class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg flex items-center space-x-2 hover:bg-green-600 transition">
+    <!-- Floating WhatsApp Button (Kotak Rounded) -->
+    <a href="https://wa.me/6288987580851" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg flex items-center space-x-3 hover:bg-green-600 transition duration-300">
         <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-semibold hidden md:block">Chat via WhatsApp</span>
     </a>
 
     <!-- Footer -->

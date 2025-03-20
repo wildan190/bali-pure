@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lacak Pesanan - Bali Pure Manufacturer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -114,5 +115,43 @@
         @endif
     </div>
 </body>
+
+<!-- Floating WhatsApp Button (Kotak Rounded) -->
+<a href="https://wa.me/6288987580851" target="_blank"
+    class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg flex items-center space-x-3 hover:bg-green-600 transition duration-300">
+    <i class="fab fa-whatsapp text-2xl"></i>
+    <span class="font-semibold hidden md:block">Chat via WhatsApp</span>
+</a>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto text-center px-6">
+        <h3 class="text-2xl font-semibold">Follow Us</h3>
+
+        <!-- Ikon Sosial Media -->
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="https://facebook.com/balipuremanufacturer" target="_blank"
+                class="text-gray-400 hover:text-blue-500 text-2xl transition duration-300">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/balipuremanufacturer" target="_blank"
+                class="text-gray-400 hover:text-pink-500 text-2xl transition duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/balipuremfg" target="_blank"
+                class="text-gray-400 hover:text-blue-400 text-2xl transition duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com/company/balipuremanufacturer" target="_blank"
+                class="text-gray-400 hover:text-blue-700 text-2xl transition duration-300">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="mt-6 text-gray-400">&copy; {{ date('Y') }} Bali Pure Manufacturer. All rights reserved.</p>
+
+    </div>
+</footer>
 
 </html>
