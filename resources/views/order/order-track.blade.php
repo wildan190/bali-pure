@@ -9,6 +9,73 @@
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4" x-data="{ open: false }">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <!-- Logo -->
+            <a href="https://balipuremanufacturer.id/" class="flex items-center space-x-3">
+                <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo Bali Pure Manufacturer" class="h-12 w-auto">
+                <span class="text-xl font-bold text-gray-800">Bali Pure Manufacturer</span>
+            </a>
+
+            <!-- Menu (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-500 font-semibold">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-500 font-semibold">Keunggulan</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-500 font-semibold">Produk</a>
+                <a href="{{ route('tracking') }}" class="text-gray-600 hover:text-blue-500 font-semibold">Order
+                    Track</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 font-semibold">Contact</a>
+            </div>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <button @click="open = !open" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar (Mobile) -->
+        <div x-show="open" @click.away="open = false" class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50">
+            <div class="w-64 bg-white h-full shadow-lg p-6 transform translate-x-full transition-all duration-300 ease-in-out fixed top-0 right-0"
+                x-bind:class="{ 'translate-x-0': open, 'translate-x-full': !open }">
+                <!-- Tombol Close -->
+                <button @click="open = false" class="text-gray-600 absolute top-4 right-4">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <!-- Logo Sidebar -->
+                <div class="text-center mt-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Menu</h2>
+                </div>
+
+                <!-- Navigasi Sidebar -->
+                <nav class="mt-8 space-y-4">
+                    <a href="#about"
+                        class="flex items-center space-x-3 text-gray-800 hover:text-blue-500 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </a>
+                    <a href="#services"
+                        class="flex items-center space-x-3 text-gray-800 hover:text-blue-500 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-star"></i>
+                        <span>Keunggulan</span>
+                    </a>
+                    <a href="#products"
+                        class="flex items-center space-x-3 text-gray-800 hover:text-blue-500 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-tshirt"></i>
+                        <span>Produk</span>
+                    </a>
+                    <a href="#contact"
+                        class="flex items-center space-x-3 text-gray-800 hover:text-blue-500 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
     <div class="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold text-center mb-4">Lacak Pesanan Anda</h2>
 
