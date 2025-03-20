@@ -11,21 +11,21 @@ class DashboardController extends Controller
   public function index()
   {
     // Ambil total pendapatan (hanya yang sudah dibayar)
-    $totalRevenue = Order::where('status', 'paid')->sum('total'); // Ganti total_price dengan total
+    $totalRevenue = Order::where('status', 'paid')->sum('total');
 
     // Hitung jumlah pembeli unik
     $totalCustomers = Order::where('status', 'paid')->distinct('order_number')->count('order_number');
 
-    // Data untuk chart pendapatan bulanan menggunakan strftime untuk SQLite
+    // Data untuk chart pendapatan bulanan (PostgreSQL pakai TO_CHAR)
     $monthlyRevenue = Order::where('status', 'paid')
-      ->selectRaw("strftime('%m', created_at) as month, SUM(total) as total")
+      ->selectRaw("TO_CHAR(created_at, 'MM') as month, SUM(total) as total")
       ->groupBy('month')
       ->orderBy('month')
       ->pluck('total', 'month');
 
     // Pastikan bulan-bulan yang belum ada datanya tetap ada di chart
     $monthlyRevenue = collect(range(1, 12))->mapWithKeys(function ($month) use ($monthlyRevenue) {
-      return [$month => $monthlyRevenue->get(str_pad($month, 2, '0', STR_PAD_LEFT), 0)];
+      return [str_pad($month, 2, '0', STR_PAD_LEFT) => $monthlyRevenue->get(str_pad($month, 2, '0', STR_PAD_LEFT), 0)];
     });
 
     // Label bulan (nama bulan dalam format Januari, Februari, dll)
@@ -35,7 +35,7 @@ class DashboardController extends Controller
 
     // Total Pendapatan Tahunan
     $yearlyRevenue = Order::where('status', 'paid')
-      ->selectRaw("strftime('%Y', created_at) as year, SUM(total) as total")
+      ->selectRaw("TO_CHAR(created_at, 'YYYY') as year, SUM(total) as total")
       ->groupBy('year')
       ->orderBy('year')
       ->pluck('total', 'year');
@@ -45,7 +45,7 @@ class DashboardController extends Controller
 
     // Jika ada tahun yang tidak terisi, set nilai 0
     $yearlyRevenue = $years->mapWithKeys(function ($year) use ($yearlyRevenue) {
-      return [$year => $yearlyRevenue->get($year, 0)];
+      return [$year => $yearlyRevenue->get((string)$year, 0)];
     });
 
     return view('dashboard', compact('totalRevenue', 'totalCustomers', 'monthlyRevenue', 'months', 'yearlyRevenue', 'years'));
