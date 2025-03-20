@@ -582,7 +582,7 @@
     </section>
 
     <!-- Floating WhatsApp Button (Kotak Rounded) -->
-    <a href="https://wa.me/6281234567890" target="_blank"
+    <a href="https://wa.me/6288987580851" target="_blank"
         class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg flex items-center space-x-3 hover:bg-green-600 transition duration-300">
         <i class="fab fa-whatsapp text-2xl"></i>
         <span class="font-semibold hidden md:block">Chat via WhatsApp</span>
@@ -634,7 +634,7 @@
         let waMessage = encodeURIComponent(
             `Halo, saya tertarik dengan produk *${name}* (Kategori: ${category}) seharga Rp. ${price}. Apakah masih tersedia?`
         );
-        document.getElementById('buyButton').href = `https://wa.me/628123456789?text=${waMessage}`;
+        document.getElementById('buyButton').href = `https://wa.me/6288987580851?text=${waMessage}`;
 
         document.getElementById('productModal').classList.remove('hidden');
     }

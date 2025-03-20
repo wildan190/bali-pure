@@ -110,7 +110,7 @@
     </div>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6281234567890" target="_blank"
+    <a href="https://wa.me/6288987580851" target="_blank"
         class="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-3 hover:bg-green-600 transition duration-300">
         <i class="fab fa-whatsapp text-2xl"></i>
         <span class="font-semibold hidden md:block">Chat via WhatsApp</span>
