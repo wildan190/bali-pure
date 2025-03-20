@@ -17,7 +17,7 @@
     <nav class="bg-white shadow-md py-4" x-data="{ open: false }">
         <div class="container mx-auto flex justify-between items-center px-6">
             <!-- Logo -->
-            <a href="{{ route('home') }}" class="flex items-center space-x-3">
+            <a href="https://balipuremanufacturer.id/" class="flex items-center space-x-3">
                 <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo Bali Pure Manufacturer" class="h-12 w-auto">
                 <span class="text-xl font-bold text-gray-800">Bali Pure Manufacturer</span>
             </a>
