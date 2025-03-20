@@ -66,10 +66,10 @@
                                             class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-600 transition duration-200">
                                             Update
                                         </button>
-                                        <a href="{{ route('order.receipt', $order->id) }}"
+                                        {{-- <a href="{{ route('order.receipt', $order->id) }}"
                                             class="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 dark:bg-red-700 dark:hover:bg-red-600 transition duration-200">
                                             Cetak Receipt
-                                        </a>
+                                        </a> --}}
                                     </div>
                                 </form>
                             </td>
