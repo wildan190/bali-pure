@@ -100,19 +100,18 @@
                 </form>
             </div>
 
-            <!-- Daftar Produk -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 @foreach ($products as $product)
                     <div
                         class="relative bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                        <img src="{{ asset('storage/' . $product->picture) }}" alt="{{ $product->name }}"
                             class="w-full h-56 object-cover" loading="lazy">
                         <div class="p-5 text-left">
                             <h3 class="text-xl font-semibold text-gray-800">{{ $product->name }}</h3>
                             <p class="text-blue-500 font-bold text-lg mt-2">Rp.
                                 {{ number_format($product->price, 0, ',', '.') }}</p>
                             <button
-                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ asset('storage/' . $product->image) }}', '{{ $product->price }}')"
+                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ asset('storage/' . $product->picture) }}', '{{ $product->price }}')"
                                 class="block mt-3 text-sm text-blue-600 font-semibold hover:underline">
                                 Lihat Detail →
                             </button>
