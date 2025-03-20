@@ -172,7 +172,7 @@
     </script>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-gray-100">
+    <section id="faq" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-gray-800 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
             <p class="mt-4 text-gray-600 text-center">Temukan jawaban atas pertanyaan yang sering diajukan oleh
