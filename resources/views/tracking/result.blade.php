@@ -53,11 +53,16 @@
                 </div>
 
                 <nav class="mt-8 space-y-4">
-                    <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition">About Us</a>
-                    <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition">Keunggulan</a>
-                    <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition">Produk</a>
-                    <a href="{{ route('tracking') }}" class="block px-4 py-2 hover:text-blue-500">Order Track</a>
-                    <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition">Contact</a>
+                    <a href="https://balipuremanufacturer.id/#home"
+                        class="block px-4 py-2 hover:bg-gray-100 transition">About Us</a>
+                    <a href="https://balipuremanufacturer.id/#home"
+                        class="block px-4 py-2 hover:bg-gray-100 transition">Keunggulan</a>
+                    <a href="https://balipuremanufacturer.id/#home"
+                        class="block px-4 py-2 hover:bg-gray-100 transition">Produk</a>
+                    <a href="https://balipuremanufacturer.id/#home" class="block px-4 py-2 hover:text-blue-500">Order
+                        Track</a>
+                    <a href="https://balipuremanufacturer.id/#home"
+                        class="block px-4 py-2 hover:bg-gray-100 transition">Contact</a>
                 </nav>
             </div>
         </div>
