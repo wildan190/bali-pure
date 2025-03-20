@@ -14,7 +14,7 @@ class DashboardController extends Controller
     $totalRevenue = Order::where('status', 'paid')->sum('total'); // Ganti total_price dengan total
 
     // Hitung jumlah pembeli unik
-    $totalCustomers = Order::where('status', 'paid')->distinct('customer_id')->count('customer_id');
+    $totalCustomers = Order::where('status', 'paid')->distinct('order_number')->count('order_number');
 
     // Data untuk chart pendapatan bulanan menggunakan strftime untuk SQLite
     $monthlyRevenue = Order::where('status', 'paid')
