@@ -104,8 +104,8 @@
                 @foreach ($products as $product)
                     <div
                         class="relative bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="{{ asset('storage/' . $product->picture) }}" alt="{{ $product->name }}"
-                            class="w-full h-56 object-cover" loading="lazy">
+                        <img src="{{ $product->picture }}" alt="{{ $product->name }}" class="w-full h-56 object-cover"
+                            loading="lazy">
                         <div class="p-5 text-left">
                             <h3 class="text-xl font-semibold text-gray-800">{{ $product->name }}</h3>
                             <p class="text-blue-500 font-bold text-lg mt-2">Rp.
