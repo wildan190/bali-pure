@@ -26,14 +26,21 @@ class WebController extends Controller
   public function index()
   {
     $galleries = Gallery::latest()->take(6)->get()->map(function ($gallery) {
-      // Ubah path gambar menjadi URL lengkap
-      $gallery->picture = url('storage/' . $gallery->picture);
+      // Periksa apakah gambar sudah memiliki URL lengkap
+      if (!preg_match('/^https?:\/\//', $gallery->picture)) {
+        // Jika tidak, tambahkan URL dengan 'storage/'
+        $gallery->picture = url('storage/' . $gallery->picture);
+      }
       return $gallery;
     });
 
     $featuredProducts = $this->productRepository->getAll(3, null);
     $featuredProducts->getCollection()->transform(function ($product) {
-      $product->picture = $product->picture ? url('storage/' . $product->picture) : null;
+      // Periksa apakah gambar sudah memiliki URL lengkap
+      if ($product->picture && !preg_match('/^https?:\/\//', $product->picture)) {
+        // Jika tidak, tambahkan URL dengan 'storage/'
+        $product->picture = url('storage/' . $product->picture);
+      }
       return $product;
     });
 
