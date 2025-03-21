@@ -283,7 +283,7 @@
                             <p class="text-blue-500 font-bold text-lg mt-2">Rp.
                                 {{ number_format($product->price, 0, ',', '.') }}</p>
                             <button
-                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ asset('storage/' . $product->picture) }}', '{{ $product->price }}')"
+                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ $product->picture }}', '{{ $product->price }}')"
                                 class="block mt-3 text-sm text-blue-600 font-semibold hover:underline">
                                 Lihat Detail →
                             </button>
@@ -355,7 +355,7 @@
                 @foreach ($galleries as $gallery)
                     <div
                         class="relative group overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-                        <img src="{{ asset('storage/' . $gallery->picture) }}" alt="{{ $gallery->title }}"
+                        <img src="{{ $gallery->picture }}" alt="{{ $gallery->title }}"
                             class="w-full h-64 object-cover rounded-lg" loading="lazy">
 
                         <!-- Overlay Hover Effect -->

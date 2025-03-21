@@ -111,7 +111,7 @@
                             <p class="text-blue-500 font-bold text-lg mt-2">Rp.
                                 {{ number_format($product->price, 0, ',', '.') }}</p>
                             <button
-                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ asset('storage/' . $product->picture) }}', '{{ $product->price }}')"
+                                onclick="openModal('{{ $product->id }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->category->name }}', '{{ $product->picture }}', '{{ $product->price }}')"
                                 class="block mt-3 text-sm text-blue-600 font-semibold hover:underline">
                                 Lihat Detail →
                             </button>
