@@ -52,9 +52,10 @@ class ProductRepository implements ProductRepositoryInterface
     $product = $this->findById($id);
     if (!$product) return false;
 
-    // Hapus gambar dari storage jika ada
+    // Hapus gambar dari Cloudflare R2 jika ada
     if ($product->picture) {
-      Storage::delete($product->picture);
+      $path = str_replace(env('AWS_URL') . '/', '', $product->picture);
+      Storage::disk('s3')->delete($path);
     }
 
     return $product->delete();

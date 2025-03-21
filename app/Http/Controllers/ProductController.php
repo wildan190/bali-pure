@@ -194,9 +194,10 @@ class ProductController extends Controller
       return redirect()->route('products.index')->with('error', 'Product not found!');
     }
 
-    // Hapus gambar dari storage jika ada
+    // Hapus gambar dari Cloudflare R2 jika ada
     if ($product->picture) {
-      Storage::delete($product->picture);
+      $path = str_replace(env('AWS_URL') . '/', '', $product->picture); // Ambil path setelah domain
+      Storage::disk('s3')->delete($path);
     }
 
     $deleted = $this->productRepository->delete($id);
