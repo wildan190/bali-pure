@@ -83,7 +83,7 @@
         <!-- Detail Produk -->
         <div class="md:w-1/3 bg-white p-6 rounded-lg shadow-lg">
             <h2 class="text-xl font-semibold text-gray-900">Detail Produk</h2>
-            <img src="{{ asset('storage/' . $product->picture) }}" alt="{{ $product->name }}"
+            <img src="{{ '$product->picture' }}" alt="{{ $product->name }}"
                 class="w-full h-48 object-cover rounded-lg mt-3">
             <h3 class="text-lg font-semibold text-gray-800 mt-3">{{ $product->name }}</h3>
             <p class="text-blue-500 font-bold text-lg">Rp. {{ number_format($product->price, 0, ',', '.') }}</p>
