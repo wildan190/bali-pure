@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
   Route::put('admin/products/{id}', [ProductController::class, 'update'])->name('products.update');
   Route::delete('admin/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+  Route::get('/product/image/{id}', [ProductController::class, 'downloadImage']);
+
 
   Route::get('admin/galleries', [GalleryController::class, 'index'])->name('galleries.index');
   Route::get('admin/galleries/create', [GalleryController::class, 'create'])->name('galleries.create');
