@@ -42,7 +42,12 @@
                         <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="p-3 text-sm text-gray-700 dark:text-gray-300">{{ $order->order_number }}</td>
                             <td class="p-3 text-sm text-gray-700 dark:text-gray-300">{{ $order->name }}</td>
-                            <td class="p-3 text-sm text-gray-700 dark:text-gray-300">{{ $order->phone }}</td>
+                            <td class="p-3 text-sm text-gray-700 dark:text-gray-300">
+                                <a href="https://wa.me/{{ $order->phone }}" target="_blank"
+                                    class="text-blue-500 hover:underline">
+                                    {{ $order->phone }}
+                                </a>
+                            </td>
                             <!-- Menampilkan Telepon -->
                             <td class="p-3 text-sm text-gray-700 dark:text-gray-300 capitalize">{{ $order->status }}
                             </td>
@@ -54,7 +59,8 @@
                                             class="p-2 border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500">
                                             <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>
                                                 Pending</option>
-                                            <option value="paid" {{ $order->status == 'paid' ? 'selected' : '' }}>Paid
+                                            <option value="paid" {{ $order->status == 'paid' ? 'selected' : '' }}>
+                                                Paid
                                             </option>
                                             <option value="shipped"
                                                 {{ $order->status == 'shipped' ? 'selected' : '' }}>Shipped</option>
